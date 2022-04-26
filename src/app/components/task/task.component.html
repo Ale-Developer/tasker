@@ -4,9 +4,16 @@
             <input type="text" [(ngModel)]="nameTask" (keyup.enter)="addTask()" class="form-control form-control-lg" placeholder="Ingrese tarea...">
         </div>
         <div class="col-lg-6 offset-lg-3 mt-3">
-            <div class="card p-2">
+            <div *ngIf="listTask.length === 0" class="card p-2">
                 <h6>No hay tareas para mostrar</h6>
             </div>
+            <ul class="list-group">
+                <li *ngFor="let tarea of listTask" class="list-group-item d-flex justify-content-between">
+                    <span class="cursor"><i class="fa-regular fa-circle"></i></span>
+                    {{ tarea.nombre }}
+                    <span class="cursor text-danger"><i class="fa-solid fa-trash-can"></i></span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
