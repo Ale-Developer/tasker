@@ -21,7 +21,8 @@ export class TaskComponent implements OnInit {
       estado: false
     }
     // Agregar objeto task al array
-
+    this.listTask.push(task);
     // Reset form
+    this.nameTask = '';
   }
 }
