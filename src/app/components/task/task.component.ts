@@ -25,4 +25,12 @@ export class TaskComponent implements OnInit {
     // Reset form
     this.nameTask = '';
   }
+
+  deleteTask(index: number): void{
+    this.listTask.splice(index, 1);
+  }
+
+  updateTask(index: number, task: Task): void {
+    this.listTask[index].estado = !task.estado
+  }
 }
